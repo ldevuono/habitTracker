@@ -1,24 +1,47 @@
 import './App.css';
 import Form from './Form';
-import TaskCount from './TaskCount';
 import Tasks from './Tasks';
 import { useState } from 'react';
 
 function App() {
 
-  const [input, setInput] = useState("")
-  const [displayTask, setDisplayTask] = useState("")
+  const [task, setTask] = useState("")
+  const [taskList, setTaskList] = useState([]);
 
   const handleChange = (e) => {
-    setInput(e.target.value)
+    setTask(e.target.value)
   }
 
-  const taskArray = []
-
-  const handleSubmit = (e) => {
+  const addTask = (e) => {
     e.preventDefault();
-    setDisplayTask(input)
-    setInput("");
+    if (task !== "" && task !== " ") {
+      const taskDetails = {
+        id: Math.floor(Math.random() * 1000 + 1),
+        value: task,
+        isComplete: false
+      }
+      setTaskList([...taskList, taskDetails])
+    } else {
+      alert("You haven't entered a task")
+    }
+  }
+
+  const deleteTask = (e, id) => {
+    e.preventDefault();
+    setTaskList(taskList.filter((task) => task.id !== id))
+  }
+
+  const completedTask = (e, id) => {
+    e.preventDefault();
+    const element = taskList.findIndex(elem => elem.id === id);
+
+    const newTaskList = [...taskList]
+
+    newTaskList[element] = {
+      ...newTaskList[element],
+      isComplete: true
+    }
+    setTaskList(newTaskList)
   }
 
   return (
@@ -27,13 +50,17 @@ function App() {
         <h1>Task Tracker</h1>
       </header>
       <Form
-        input={input}
+        input={task}
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
+        addTask={addTask}
       />
-      <TaskCount />
       <Tasks
-        displayTask={displayTask} />
+        taskList={taskList}
+        deleteTask={deleteTask}
+        completedTask={completedTask}
+      />
+
+
     </div>
   );
 }
