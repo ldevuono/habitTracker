@@ -1,15 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap');
+
+
+html {
+  font-size: 125%;
+}
+
+
+body {
+  background-color: plum;
+  display: flex;
+  align-items: Center;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+}
+
 .App {
   text-align: center;
+}
+
+main {
+  padding: 20px;
+  background-color: tomato;
+  width: 50vw;
+  height: 50vh;
+  border-radius: 30px;
+}
+
+h1 {
+  font-size: 3rem;
 }
 
 ul {
   list-style-type: none;
 }
 
+li {
+  margin-bottom: 10px;
+}
+
 .strikethrough {
   text-decoration: line-through;
+  font-weight: bold;
 }
 
 .listItem {
-  color: blue;
+  font-weight: bold;
+}
+
+label {
+  margin-right: 10px;
+}
+
+.delete {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+form button {
+  margin-left: 10px;
+}
+
+button {
+  background-color: plum;
+  border: 1px solid rgb(146, 54, 146);
+  padding: 5px 10px;
+  text-transform: lowercase;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+@media(max-width:705px) {
+  main {
+    width: 80vw;
+    height: 80vh;
+  }
 }

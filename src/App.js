@@ -49,17 +49,18 @@ function App() {
       <header>
         <h1>Task Tracker</h1>
       </header>
-      <Form
-        input={task}
-        handleChange={handleChange}
-        addTask={addTask}
-      />
-      <Tasks
-        taskList={taskList}
-        deleteTask={deleteTask}
-        completedTask={completedTask}
-      />
-
+      <main>
+        <Form
+          input={task}
+          handleChange={handleChange}
+          addTask={addTask}
+        />
+        <Tasks
+          taskList={taskList}
+          deleteTask={deleteTask}
+          completedTask={completedTask}
+        />
+      </main>
 
     </div>
   );
