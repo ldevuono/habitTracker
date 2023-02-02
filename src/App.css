@@ -7,7 +7,8 @@ html {
 
 
 body {
-  background-color: plum;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 202, 0.4345938204383316) 100%);
   display: flex;
   align-items: Center;
   justify-content: center;
@@ -20,9 +21,11 @@ body {
 
 main {
   padding: 20px;
-  background-color: tomato;
+  background: rgb(253, 66, 29);
+  background: radial-gradient(circle, rgba(253, 66, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
   width: 50vw;
-  height: 50vh;
+  height: 100vh;
+  margin-bottom: 20px;
   border-radius: 30px;
 }
 
@@ -33,6 +36,7 @@ h1 {
 ul {
   list-style-type: none;
 }
+
 
 li {
   margin-bottom: 10px;
@@ -73,6 +77,5 @@ button {
 @media(max-width:705px) {
   main {
     width: 80vw;
-    height: 80vh;
   }
 }
