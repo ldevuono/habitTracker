@@ -52,7 +52,7 @@ function App() {
       </header>
       <main>
         <Form
-          input={task}
+          task={task}
           handleChange={handleChange}
           addTask={addTask}
         />
