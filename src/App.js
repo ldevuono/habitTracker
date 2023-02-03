@@ -21,6 +21,7 @@ function App() {
         isComplete: false
       }
       setTaskList([...taskList, taskDetails])
+      setTask("");
     } else {
       alert("You haven't entered a task")
     }
@@ -61,7 +62,6 @@ function App() {
           completedTask={completedTask}
         />
       </main>
-
     </div>
   );
 }
