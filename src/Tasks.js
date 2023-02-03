@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 function Tasks(props) {
 
     return (
@@ -8,8 +11,8 @@ function Tasks(props) {
                         {props.taskList.map(task =>
                             <li key={task.id} className={task.isComplete ? "strikethrough" : "listItem"}>
                                 {task.value}
-                                <button className="delete" onClick={(e) => props.deleteTask(e, task.id)}>Delete</button>
-                                <button onClick={(e) => props.completedTask(e, task.id)}>Completed</button>
+                                <button className="completed" onClick={(e) => props.completedTask(e, task.id)}><FontAwesomeIcon icon={faCheck} /></button>
+                                <button onClick={(e) => props.deleteTask(e, task.id)}><FontAwesomeIcon icon={faTrash} /></button>
                             </li>)}
                     </ul>
                     : null}

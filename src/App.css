@@ -10,7 +10,7 @@ body {
   background: rgb(63, 94, 251);
   background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 202, 0.4345938204383316) 100%);
   display: flex;
-  align-items: Center;
+  align-items: center;
   justify-content: center;
   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem;
@@ -18,6 +18,7 @@ body {
 
 .App {
   text-align: center;
+
 }
 
 main {
@@ -27,7 +28,7 @@ main {
   width: 50vw;
   height: 100vh;
   margin-bottom: 20px;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 h1 {
@@ -35,46 +36,39 @@ h1 {
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: circle;
 }
 
 form {
   background: rgb(255, 218, 185);
   background: radial-gradient(circle, rgba(255, 218, 185, 1) 50%, rgba(255, 255, 255, 1) 100%);
   padding: 15px;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 input {
   padding: 10px;
   font-size: 1rem;
   border: none;
+  border-radius: 30px;
 }
 
 li {
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .strikethrough {
   text-decoration: line-through;
-  font-weight: bold;
-}
-
-.listItem {
-  font-weight: bold;
 }
 
 label {
   margin-right: 10px;
 }
 
-.delete {
+.completed {
   margin-left: 15px;
   margin-right: 5px;
-}
-
-form button {
-  margin-left: 10px;
 }
 
 button {
@@ -85,6 +79,13 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
+}
+
+form button {
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: .8rem;
 }
 
 @media(max-width:1110px) {
@@ -100,5 +101,16 @@ button {
 @media(max-width:705px) {
   main {
     width: 80vw;
+  }
+}
+
+@media(max-width:360px) {
+  main {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
   }
 }
