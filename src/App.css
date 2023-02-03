@@ -79,6 +79,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
+  color: white;
 }
 
 form button {
@@ -101,15 +102,11 @@ form button {
 @media(max-width:705px) {
   main {
     width: 80vw;
+    margin: 0 auto;
   }
 }
 
 @media(max-width:360px) {
-  main {
-    text-align: center;
-    margin: 0 auto;
-  }
-
   h1 {
     font-size: 2.5rem;
   }
