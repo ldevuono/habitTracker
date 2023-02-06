@@ -4,7 +4,6 @@ import Tasks from './Tasks';
 import { useState } from 'react';
 
 function App() {
-
   const [task, setTask] = useState("")
   const [taskList, setTaskList] = useState([]);
 
@@ -22,6 +21,7 @@ function App() {
       }
       setTaskList([...taskList, taskDetails])
       setTask("");
+
     } else {
       alert("You haven't entered a task")
     }
