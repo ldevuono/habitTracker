@@ -90,6 +90,15 @@ form button {
   font-size: .8rem;
 }
 
+select {
+  background-color: rgb(255, 218, 185);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: 15px;
+  font-size: 1rem;
+}
+
 @media(max-width:1110px) {
   body {
     font-size: 1rem;
