@@ -12,7 +12,6 @@ function Form(props) {
                     <input type="text" id="task" name="task" placeholder="Feed cat" value={props.task} onChange={props.handleChange} />
                     <button type="submit"><FontAwesomeIcon icon={faPlus} /></button>
                 </form>
-
             </div>
         </div >
     );
