@@ -1,47 +1,58 @@
 import './App.css';
 import Form from './Form';
+import { useState, useEffect } from 'react';
+import firebase from './firebase';
+import { getDatabase, ref, onValue, push, remove, update } from 'firebase/database';
 import Tasks from './Tasks';
-import { useState } from 'react';
 
 function App() {
-  const [task, setTask] = useState("")
-  const [taskList, setTaskList] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [input, setInput] = useState("");
+
+  useEffect(() => {
+    const database = getDatabase(firebase)
+    const dbRef = ref(database)
+
+    onValue(dbRef, (res) => {
+
+      const newState = [];
+      const data = res.val();
+
+      for (let key in data) {
+        newState.push({ key: key, name: data[key] });
+      }
+      setTasks(newState);
+    })
+  }, [])
 
   const handleChange = (e) => {
-    setTask(e.target.value)
+    setInput(e.target.value);
   }
 
   const addTask = (e) => {
     e.preventDefault();
-    if (task !== "" && task !== " ") {
-      const taskDetails = {
-        id: Math.floor(Math.random() * 1000 + 1),
-        value: task,
-        isComplete: false
-      }
-      setTaskList([...taskList, taskDetails])
-      setTask("");
+    if (input !== "" && input !== " ") {
+      const database = getDatabase(firebase);
+      const dbRef = ref(database);
+      push(dbRef, input);
     } else {
-      alert("You haven't entered a task")
+      alert("please add a task")
     }
+    setInput("");
   }
 
-  const deleteTask = (e, id) => {
-    e.preventDefault();
-    setTaskList(taskList.filter((task) => task.id !== id))
+  const completeTask = (taskId) => {
+    // const database = getDatabase(firebase);
+    // const dbRef = ref(database, `/${taskId}`);
+    console.log(taskId)
+    // TODO: styled components to style on click?????
+    // push(dbRef, { isCompleted: true })
   }
 
-  const completedTask = (e, id) => {
-    e.preventDefault();
-    const element = taskList.findIndex(elem => elem.id === id);
-
-    const newTaskList = [...taskList]
-
-    newTaskList[element] = {
-      ...newTaskList[element],
-      isComplete: true
-    }
-    setTaskList(newTaskList)
+  const deleteTask = (taskId) => {
+    const database = getDatabase(firebase);
+    const dbRef = ref(database, `/${taskId}`);
+    remove(dbRef);
   }
 
   return (
@@ -51,14 +62,14 @@ function App() {
       </header>
       <main>
         <Form
-          task={task}
+          input={input}
           handleChange={handleChange}
           addTask={addTask}
         />
         <Tasks
-          taskList={taskList}
+          tasks={tasks}
           deleteTask={deleteTask}
-          completedTask={completedTask}
+          completeTask={completeTask}
         />
       </main>
     </div>
