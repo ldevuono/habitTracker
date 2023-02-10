@@ -59,17 +59,16 @@ li {
   font-weight: bold;
 }
 
-.strikethrough {
+.noStrike {
+  text-decoration: none;
+}
+
+.strike {
   text-decoration: line-through;
 }
 
 label {
   margin-right: 10px;
-}
-
-.completed {
-  margin-left: 15px;
-  margin-right: 5px;
 }
 
 button {

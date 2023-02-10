@@ -41,18 +41,14 @@ function App() {
     setInput("");
   }
 
-  const completeTask = (taskId) => {
-    // const database = getDatabase(firebase);
-    // const dbRef = ref(database, `/${taskId}`);
-    console.log(taskId)
-    // TODO: styled components to style on click?????
-    // push(dbRef, { isCompleted: true })
-  }
-
   const deleteTask = (taskId) => {
     const database = getDatabase(firebase);
     const dbRef = ref(database, `/${taskId}`);
     remove(dbRef);
+  }
+  const completeTask = () => {
+    console.log("Strike")
+    //TODO: strikethrough on click
   }
 
   return (
