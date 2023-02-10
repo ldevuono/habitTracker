@@ -10,19 +10,9 @@ const Tasks = (props) => {
                         <li
                             key={task.key}>
                             <p>{task.name}</p>
+                            <p>{props.tag}</p>
                             <button onClick={() => props.deleteTask(task.key)}><FontAwesomeIcon icon={faTrash} /></button>
                             <button onClick={() => props.completeTask(task.key)}><FontAwesomeIcon icon={faCheck} /></button>
-                            {/* TODO: set tag into state so it can be saved in firebase */}
-                            <select
-                                defaultValue={""}
-                                required={true}>
-                                <option value="" disabled >tag</option>
-                                <option value="work" id="work">work</option>
-                                <option value="school" id="school">school</option>
-                                <option value="home" id="home">home</option>
-                                <option value="social" id="social">social</option>
-                                <option value="other" id="other">other</option>
-                            </select>
                         </li>
                     )
                 })

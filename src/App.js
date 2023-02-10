@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react';
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, update } from 'firebase/database';
 import Tasks from './Tasks';
+import { setTextRange } from 'typescript';
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
+  const [tag, setTag] = useState("");
 
   useEffect(() => {
     const database = getDatabase(firebase)
@@ -27,6 +29,11 @@ function App() {
 
   const handleChange = (e) => {
     setInput(e.target.value);
+  }
+
+  const handleTagInput = (e) => {
+    setTag(e.target.value);
+    console.log(tag)
   }
 
   const addTask = (e) => {
@@ -61,11 +68,13 @@ function App() {
           input={input}
           handleChange={handleChange}
           addTask={addTask}
+          handleTagInput={handleTagInput}
         />
         <Tasks
           tasks={tasks}
           deleteTask={deleteTask}
           completeTask={completeTask}
+          tag={tag}
         />
       </main>
     </div>
