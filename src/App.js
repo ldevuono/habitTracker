@@ -1,10 +1,9 @@
-import './App.css';
+import './App.scss';
 import Form from './Form';
 import { useState, useEffect } from 'react';
 import firebase from './firebase';
-import { getDatabase, ref, onValue, push, remove, update } from 'firebase/database';
+import { getDatabase, ref, onValue, push, remove, } from 'firebase/database';
 import Tasks from './Tasks';
-import { setTextRange } from 'typescript';
 
 function App() {
   const [tasks, setTasks] = useState([]);
