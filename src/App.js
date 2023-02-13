@@ -8,7 +8,7 @@ import Tasks from './Tasks';
 function App() {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
-  const [tag, setTag] = useState("");
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const database = getDatabase(firebase)
@@ -26,14 +26,17 @@ function App() {
     })
   }, [])
 
+  const increaseCounter = () => {
+    setCounter(counter + 1);
+  }
+  const decreaseCounter = () => {
+    setCounter(counter - 1);
+  }
+
   const handleChange = (e) => {
     setInput(e.target.value);
   }
 
-  const handleTagInput = (e) => {
-    setTag(e.target.value);
-    console.log(tag)
-  }
 
   const addTask = (e) => {
     e.preventDefault();
@@ -52,10 +55,10 @@ function App() {
     const dbRef = ref(database, `/${taskId}`);
     remove(dbRef);
   }
-  const completeTask = () => {
-    console.log("Strike")
-    //TODO: strikethrough on click
-  }
+  // const completeTask = () => {
+  //   console.log("Strike")
+  //   //TODO: strikethrough on click
+  // }
 
   return (
     <div className="App">
@@ -67,13 +70,15 @@ function App() {
           input={input}
           handleChange={handleChange}
           addTask={addTask}
-          handleTagInput={handleTagInput}
         />
         <Tasks
           tasks={tasks}
           deleteTask={deleteTask}
-          completeTask={completeTask}
-          tag={tag}
+          // completeTask={completeTask}
+          increaseCounter={increaseCounter}
+          decreaseCounter={decreaseCounter}
+          counter={counter}
+
         />
       </main>
     </div>

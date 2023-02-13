@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const Tasks = (props) => {
     return (
@@ -11,8 +11,14 @@ const Tasks = (props) => {
                             key={task.key}>
                             <p>{task.name}</p>
                             <p>{props.tag}</p>
-                            <button onClick={() => props.deleteTask(task.key)}><FontAwesomeIcon icon={faTrash} /></button>
-                            <button onClick={() => props.completeTask(task.key)}><FontAwesomeIcon icon={faCheck} /></button>
+
+                            <div className="counters">
+                                <button className="decreaseCounter" onClick={() => props.decreaseCounter()}>-</button>
+                                {props.counter}
+
+                                <button className="increaseCounter" onClick={() => props.increaseCounter()}>+</button>
+                            </div>
+                            <button className="delete" onClick={() => props.deleteTask(task.key)}><FontAwesomeIcon icon={faTrash} /></button>
                         </li>
                     )
                 })
