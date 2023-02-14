@@ -11,6 +11,6 @@ Work in progress! A simple to-do app created in React. Currently implementing Fi
 - Firebase Authentication
 - TypeScript
 
-## Live Link
+# Live Link
 https://tacktrask.netlify.app/
 
