@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Work in progress! A simple to-do app created in React. Currently implementing Firebase Authentication and refactoring to TypeScript.
+Work in progress! A simple streak tracking app created in React. Currently implementing Firebase Authentication and refactoring to TypeScript.
 
 # Tools
 - React useEffect and useState hooks  
