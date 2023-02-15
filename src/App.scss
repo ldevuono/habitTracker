@@ -20,8 +20,21 @@ main {
   border-radius: 10px;
 }
 
-h1 {
-  font-size: 2.5rem;
+header {
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  img {
+    width: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: -10;
+    opacity: .6;
+  }
 }
 
 ul {
@@ -70,12 +83,6 @@ li {
   &:nth-child(even) {
     background-color: rgb(129, 141, 193);
     color: azure;
-
-    button:hover,
-    button:focus,
-    button:active {
-      background-color: rgb(80, 104, 143);
-    }
   }
 
   p {
@@ -99,7 +106,7 @@ li {
     display: inline;
 
     button {
-      margin: 0 5px;
+      margin: 0 10px;
       color: black;
     }
 
@@ -112,7 +119,7 @@ li {
     .increaseCounter:hover,
     .increaseCounter:focus,
     .increaseCounter:active {
-      background-color: green;
+      background-color: #EA738DFF;
     }
   }
 }

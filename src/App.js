@@ -1,9 +1,10 @@
 import './App.scss';
-import Form from './Form';
+import Form from './components/Form';
 import { useState, useEffect } from 'react';
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, set } from 'firebase/database';
-import Streaks from './Streaks';
+import Streaks from './components/Streaks';
+import arrow from '././assets/arrow.png'
 
 function App() {
   const [streaks, setStreaks] = useState([]);
@@ -72,6 +73,7 @@ function App() {
     <main>
       <header>
         <h1>Streak Tracker</h1>
+        <img src={arrow} alt="arrow trending upwards—just like your habits"></img>
       </header>
       <Form
         input={input}
