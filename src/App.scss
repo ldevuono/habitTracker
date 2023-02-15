@@ -7,7 +7,7 @@ html {
 
 
 body {
-  background-color: pink;
+  background-color: rgb(255, 218, 224);
   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem;
   transition: .3s ease;
@@ -64,10 +64,10 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(210, 159, 168);
+  background-color: rgb(236, 180, 190);
   color: azure;
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     background-color: rgb(129, 141, 193);
     color: azure;
 
