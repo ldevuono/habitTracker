@@ -12,5 +12,5 @@ Work in progress! A simple streak tracking app created in React. Currently imple
 - TypeScript
 
 # Live Link
-https://tacktrask.netlify.app/
+https://streak-track.netlify.app/
 
