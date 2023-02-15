@@ -166,10 +166,26 @@ select {
       opacity: .4;
     }
   }
+
+  main {
+    width: 100%;
+    padding: 0;
+  }
 }
 
-@media(max-width:360px) {
+
+@media(max-width:385px) {
   h1 {
     font-size: 2.5rem;
   }
+
+  li {
+    padding: 20px 10px;
+    font-size: .8rem;
+  }
+
+  button {
+    font-size: .7rem;
+  }
+
 }
