@@ -26,6 +26,7 @@ header {
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
+    transition: .3s ease;
   }
 
   img {
@@ -164,19 +165,21 @@ select {
   header {
     img {
       opacity: .4;
+      width: 110px;
     }
   }
 
   main {
     width: 100%;
-    padding: 0;
   }
 }
 
 
-@media(max-width:385px) {
-  h1 {
-    font-size: 2.5rem;
+@media(max-width:390px) {
+  header {
+    h1 {
+      font-size: 2.2rem;
+    }
   }
 
   li {
