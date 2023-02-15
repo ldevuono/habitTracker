@@ -70,25 +70,26 @@ function App() {
   }
 
   return (
-    <main>
-      <header>
-        <h1>Streak Tracker</h1>
-        <img src={arrow} alt="arrow trending upwards—just like your habits"></img>
-      </header>
-      <Form
-        input={input}
-        handleChange={handleChange}
-        addStreak={addStreak}
-      />
-      <Streaks
-        streaks={streaks}
-        deleteStreak={deleteStreak}
-        increaseCounter={increaseCounter}
-        resetCounter={resetCounter}
-        counter={counter}
-      />
-    </main>
-
+    <div>
+      <main>
+        <header>
+          <h1>Streak Tracker</h1>
+          <img src={arrow} alt="arrow trending upwards—just like your habits"></img>
+        </header>
+        <Form
+          input={input}
+          handleChange={handleChange}
+          addStreak={addStreak}
+        />
+        <Streaks
+          streaks={streaks}
+          deleteStreak={deleteStreak}
+          increaseCounter={increaseCounter}
+          resetCounter={resetCounter}
+          counter={counter}
+        />
+      </main>
+    </div>
   );
 }
 
