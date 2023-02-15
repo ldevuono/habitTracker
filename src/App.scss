@@ -7,50 +7,46 @@ html {
 
 
 body {
-  background: rgb(63, 94, 251);
-  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 202, 0.4345938204383316) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: pink;
   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem;
   transition: .3s ease;
 }
 
-.App {
-  text-align: center;
-
-}
-
 main {
-  padding: 20px;
-  background: rgb(253, 66, 29);
-  background: radial-gradient(circle, rgba(253, 66, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
-  width: 50vw;
-  height: 100vh;
-  margin-bottom: 20px;
-  border-radius: 50px;
+  text-align: center;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 10px;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 ul {
-  list-style-type: circle;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 form {
-  background: rgb(255, 218, 185);
-  background: radial-gradient(circle, rgba(255, 218, 185, 1) 50%, rgba(255, 255, 255, 1) 100%);
+  background-color: rgb(146, 166, 209);
   padding: 15px;
-  border-radius: 50px;
 
   button {
     margin-left: 10px;
     padding: 8px;
     border-radius: 10px;
     font-size: .8rem;
+    background-color: #2F3C7E;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgb(80, 104, 143);
+    }
   }
 }
 
@@ -58,31 +54,66 @@ input {
   padding: 10px;
   font-size: 1rem;
   border: none;
-  border-radius: 30px;
+  border-radius: 10px;
+  width: 50%;
 }
 
 li {
-  margin-bottom: 10px;
+  padding: 20px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(210, 159, 168);
+  color: azure;
+
+  &:nth-child(odd) {
+    background-color: rgb(129, 141, 193);
+    color: azure;
+
+    button:hover,
+    button:focus,
+    button:active {
+      background-color: rgb(80, 104, 143);
+    }
+  }
 
   p {
     display: inline;
+    margin-left: 10px;
   }
 
   .delete {
-    margin-left: 20px;
-    font-size: .9rem;
+    font-size: .7rem;
+    color: black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #EA738DFF;
+    }
   }
+
 
   .counters {
     display: inline;
-    margin-left: 20px;
 
     button {
       margin: 0 5px;
+      color: black;
     }
 
+    .resetCounter:hover,
+    .resetCounter:focus,
+    .resetCounter:active {
+      background-color: red;
+    }
 
+    .increaseCounter:hover,
+    .increaseCounter:focus,
+    .increaseCounter:active {
+      background-color: green;
+    }
   }
 }
 
@@ -91,8 +122,8 @@ label {
 }
 
 button {
-  background-color: plum;
-  border: 1px solid rgb(146, 54, 146);
+  background-color: #89ABE3FF;
+  border: none;
   padding: 5px 10px;
   text-transform: lowercase;
   border-radius: 10px;
@@ -120,12 +151,7 @@ select {
   }
 }
 
-@media(max-width:705px) {
-  main {
-    width: 80vw;
-    margin: 0 auto;
-  }
-}
+
 
 @media(max-width:360px) {
   h1 {

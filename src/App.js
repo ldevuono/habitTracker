@@ -3,11 +3,12 @@ import Form from './Form';
 import { useState, useEffect } from 'react';
 import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, set } from 'firebase/database';
-import Tasks from './Tasks';
+import Streaks from './Streaks';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [streaks, setStreaks] = useState([]);
   const [input, setInput] = useState("");
+  // eslint-disable-next-line
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
@@ -19,26 +20,27 @@ function App() {
       for (let key in res.val()) {
         newState.push({ ...res.val()[key], key: key });
       }
-      setTasks(newState);
+      setStreaks(newState);
     })
   }, [])
 
 
-  const increaseCounter = (taskId) => {
+  const increaseCounter = (streakId) => {
     const database = getDatabase(firebase);
-    const task = tasks.find((task) => task.key === taskId);
-    if (task) {
-      const taskRef = ref(database, `/${taskId}`);
-      set(taskRef, { ...task, counter: task.counter + 1 });
+    const streak = streaks.find((streak) => streak.key === streakId);
+    if (streak) {
+      const streakRef = ref(database, `/${streakId}`);
+      set(streakRef, { ...streak, counter: streak.counter + 1 });
     }
   };
 
-  const decreaseCounter = (taskId) => {
+  const resetCounter = (streakId) => {
     const database = getDatabase(firebase);
-    const task = tasks.find((task) => task.key === taskId);
-    if (task && task.counter > 0) {
-      const taskRef = ref(database, `/${taskId}`);
-      set(taskRef, { ...task, counter: task.counter - 1 });
+    const streak = streaks.find((streak) => streak.key === streakId);
+    if (streak && streak.counter > 0) {
+      const streakRef = ref(database, `/${streakId}`);
+      set(streakRef, { ...streak, counter: 0 });
+      alert("Better luck next time!")
     }
   };
 
@@ -48,44 +50,43 @@ function App() {
   }
 
 
-  const addTask = (e) => {
+  const addStreak = (e) => {
     e.preventDefault();
     if (input !== "" && input !== " ") {
       const database = getDatabase(firebase);
       const dbRef = ref(database);
       push(dbRef, { name: input, counter: 0 });
     } else {
-      alert("please add a task")
+      alert("please add a streak")
     }
     setInput("");
   }
 
-  const deleteTask = (taskId) => {
+  const deleteStreak = (streakId) => {
     const database = getDatabase(firebase);
-    const dbRef = ref(database, `/${taskId}`);
+    const dbRef = ref(database, `/${streakId}`);
     remove(dbRef);
   }
 
   return (
-    <div className="App">
+    <main>
       <header>
-        <h1>Task Tracker</h1>
+        <h1>Streak Tracker</h1>
       </header>
-      <main>
-        <Form
-          input={input}
-          handleChange={handleChange}
-          addTask={addTask}
-        />
-        <Tasks
-          tasks={tasks}
-          deleteTask={deleteTask}
-          increaseCounter={increaseCounter}
-          decreaseCounter={decreaseCounter}
-          counter={counter}
-        />
-      </main>
-    </div>
+      <Form
+        input={input}
+        handleChange={handleChange}
+        addStreak={addStreak}
+      />
+      <Streaks
+        streaks={streaks}
+        deleteStreak={deleteStreak}
+        increaseCounter={increaseCounter}
+        resetCounter={resetCounter}
+        counter={counter}
+      />
+    </main>
+
   );
 }
 

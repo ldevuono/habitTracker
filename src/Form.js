@@ -6,23 +6,11 @@ function Form(props) {
 
     return (
         <div className="App">
-            <div className="addTask">
+            <div className="addStreak">
                 <form action="submit" >
-                    <label htmlFor="task" className="sr-only">Add a task</label>
-                    <input type="text" id="task" name="task" placeholder="Feed cat" value={props.input} onChange={props.handleChange} />
-                    <button onClick={props.addTask}><FontAwesomeIcon icon={faPlus} /></button>
-                    {/* <select
-                                onChange={props.handleTagInput}
-                                value={props.tagInput}
-                                defaultValue={""}
-                                required={true}>
-                                <option value="" disabled >tag</option>
-                                <option value="work" id="work">work</option>
-                                <option value="school" id="school">school</option>
-                                <option value="home" id="home">home</option>
-                                <option value="social" id="social">social</option>
-                                <option value="other" id="other">other</option>
-                            </select> */}
+                    <label htmlFor="streak" className="sr-only">Add a streak to track</label>
+                    <input type="text" id="streak" name="streak" placeholder="Do yoga" value={props.input} onChange={props.handleChange} />
+                    <button onClick={props.addStreak}><FontAwesomeIcon icon={faPlus} /></button>
                 </form>
             </div>
         </div >
