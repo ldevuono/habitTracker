@@ -5,6 +5,7 @@ import firebase from './firebase';
 import { getDatabase, ref, onValue, push, remove, set } from 'firebase/database';
 import Streaks from './components/Streaks';
 import arrow from '././assets/arrow.png'
+import Swal from "sweetalert2";
 
 function App() {
   const [streaks, setStreaks] = useState([]);
@@ -33,6 +34,9 @@ function App() {
       const streakRef = ref(database, `/${streakId}`);
       set(streakRef, { ...streak, counter: streak.counter + 1 });
     }
+    if (streak.counter === 6) {
+      Swal.fire(`Congrats! You've stuck to this habit for a week.`)
+    }
   };
 
   const resetCounter = (streakId) => {
@@ -41,7 +45,7 @@ function App() {
     if (streak && streak.counter > 0) {
       const streakRef = ref(database, `/${streakId}`);
       set(streakRef, { ...streak, counter: 0 });
-      alert("Better luck next time!")
+      Swal.fire(`Let's start fresh tomorrow.`)
     }
   };
 
@@ -58,7 +62,7 @@ function App() {
       const dbRef = ref(database);
       push(dbRef, { name: input, counter: 0 });
     } else {
-      alert("please add a streak")
+      Swal.fire(`Please add a streak`)
     }
     setInput("");
   }

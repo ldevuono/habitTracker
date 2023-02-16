@@ -9,7 +9,7 @@ function Form(props) {
             <div className="addStreak">
                 <form action="submit" >
                     <label htmlFor="streak" className="sr-only">Add a habit to track</label>
-                    <input type="text" id="streak" name="streak" placeholder="Do yoga" value={props.input} onChange={props.handleChange} />
+                    <input type="text" id="streak" name="streak" placeholder="Add a habit to track" value={props.input} onChange={props.handleChange} />
                     <button onClick={props.addStreak}><FontAwesomeIcon icon={faPlus} /></button>
                 </form>
             </div>
