@@ -62,7 +62,7 @@ function App() {
       const dbRef = ref(database);
       push(dbRef, { name: input, counter: 0 });
     } else {
-      Swal.fire(`Please add a streak`)
+      Swal.fire(`Please add a habit.`)
     }
     setInput("");
   }
@@ -78,7 +78,7 @@ function App() {
       <main>
         <header>
           <h1>Streak Tracker</h1>
-          <img src={arrow} alt="arrow trending upwards—just like your habits"></img>
+          <img src={arrow} alt="An arrow trending upwards—just like your habits"></img>
         </header>
         <Form
           input={input}
