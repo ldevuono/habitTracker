@@ -6,8 +6,7 @@ import { getDatabase, ref, onValue, push, remove, set } from 'firebase/database'
 import Streaks from './components/Streaks';
 import arrow from '././assets/arrow.png'
 import Swal from "sweetalert2";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from './components/Login';
+
 
 function App() {
   const [streaks, setStreaks] = useState([]);
@@ -77,12 +76,9 @@ function App() {
 
   return (
     <div>
-      <Switch>
-        <Route exact path="/" component={Login} />
-      </Switch>
       <main>
         <header>
-          <h1>Streak Tracker</h1>
+          <h1>streak tracker</h1>
           <img src={arrow} alt="An arrow trending upwards—just like your habits"></img>
         </header>
         <Form
