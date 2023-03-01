@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 
 const Streaks = (props) => {
@@ -11,7 +11,7 @@ const Streaks = (props) => {
                         <li
                             key={streak.key}>
                             <div className="streakName">
-                                <button className="delete" onClick={() => props.deleteStreak(streak.key)}><FontAwesomeIcon icon={faTrash} /></button>
+                                <button className="delete" onClick={() => props.deleteStreak(streak.key)}><FontAwesomeIcon icon={faXmark} /></button>
                                 <p>{streak.name}</p>
                             </div>
                             <div className="counters">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 
 html {
@@ -9,8 +9,8 @@ html {
 body {
   background: rgb(207, 215, 241);
   background: radial-gradient(circle, rgba(207, 215, 241, 1) 0%, rgba(230, 234, 235, 1) 100%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.4rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
   transition: .3s ease;
 }
 
@@ -51,7 +51,7 @@ ul {
 form {
   background-color: rgb(146, 166, 209);
   padding: 15px;
-  border-radius: 30px 30px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
   transition: .3s ease;
 
   button {
@@ -92,7 +92,7 @@ li {
   }
 
   &:last-child {
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 10px 10px;
     transition: .3s ease;
   }
 
@@ -102,13 +102,13 @@ li {
   }
 
   .delete {
-    font-size: .7rem;
+    font-size: .9rem;
     color: black;
+    background-color: transparent;
 
     &:hover,
     &:focus,
     &:active {
-      background-color: #2F3C7E;
       color: white;
     }
   }
@@ -125,15 +125,14 @@ li {
     .resetCounter:hover,
     .resetCounter:focus,
     .resetCounter:active {
-      background-color: red;
-      color: white;
+      // background-color: red;
+      color: red;
     }
 
     .increaseCounter:hover,
     .increaseCounter:focus,
     .increaseCounter:active {
-      background-color: #2F3C7E;
-      color: white;
+      color: #2F3C7E;
     }
   }
 }
@@ -143,7 +142,7 @@ label {
 }
 
 button {
-  background-color: #89ABE3FF;
+  background-color: transparent;
   border: none;
   padding: 5px 10px;
   text-transform: lowercase;
@@ -155,7 +154,7 @@ button {
 
 @media(max-width:1110px) {
   body {
-    font-size: 1rem;
+    font-size: .9rem;
   }
 
   input {
