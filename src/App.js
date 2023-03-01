@@ -77,7 +77,7 @@ function App() {
     <div>
       <main>
         <header>
-          <h1>Streak Tracker</h1>
+          <h1>streak tracker</h1>
           <img src={arrow} alt="An arrow trending upwards—just like your habits"></img>
         </header>
         <Form
