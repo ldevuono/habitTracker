@@ -15,12 +15,15 @@ function Login() {
             // maybe trigger a loading screen
             return;
         }
-        if (user) navigate("/dashboard");
+        if (user) navigate("/main");
     }, [user, loading, navigate]);
 
 
     return (
         <div className="login">
+            <Link to="/main">
+                <p>main</p>
+            </Link>
             <div className="login__container">
                 <input
                     type="text"

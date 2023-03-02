@@ -1,8 +1,8 @@
-import arrow from '././assets/arrow.png'
-import Streaks from './components/Streaks';
-import Form from './components/Form';
+import arrow from '../assets/arrow.png'
+import Streaks from './Streaks';
+import Form from './Form';
 import { useState, useEffect } from 'react';
-import firebase from './firebase';
+import firebase from '../firebase';
 import { getDatabase, ref, onValue, push, remove, set } from 'firebase/database';
 import Swal from "sweetalert2";
 
@@ -73,7 +73,6 @@ const Main = () => {
     }
 
     return (
-
         <main>
             <header>
                 <h1>streak tracker</h1>
